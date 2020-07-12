@@ -6,6 +6,10 @@
       {%- assign page_paths = site.header_pages | default: default_paths -%}
       {%- assign titles_size = site.pages | map: 'title' | join: '' | size -%}
    
+  {%- assign repoName= 'Notes-and-Code' -%}
+  {%- assign url = page.url | split: '/'-%}
+  {%- assign url = url[1] -%} 
+  {%- assign baseUrl = site.url | append: '/' | append: repoName}
       
 <!-- i know its an ugly solution but unfortunatly i could'nt found time to find a better one -->
   {%- assign back = page.url | split: "/" | slice: 0,2 | join: "/"  -%}
@@ -14,14 +18,15 @@
     {%- assign back = site.url -%}
   {%- endif -%}
 
-  <h3>{{site.url}}</h3>
-  <h3>{{back}}</h3>
+  <!-- <h3>{{url}}</h3>
+  <h3>{{page.id}}</h3>
+  <h3>{{back}}</h3> -->
     <div class="title-container">
-    <div id="back">
+    <!-- <div id="back">
       <a href="{{back}}" style="font-weight: 300; font-size: 1.5em; color: black">
        <-
       </a>
-    </div>
+    </div> -->
     <div>
       <a class="site-title" rel="author" href="{{ "/" | relative_url }}">
         <!-- {{ site.title | escape }} -->
