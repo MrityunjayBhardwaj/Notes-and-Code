@@ -1,0 +1,116 @@
+---
+layout: default
+---
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: [
+      "MathMenu.js",
+      "MathZoom.js",
+      "AssistiveMML.js",
+      "a11y/accessibility-menu.js"
+    ],
+    jax: ["input/TeX", "output/CommonHTML"],
+    TeX: {
+      extensions: [
+        "AMSmath.js",
+        "AMSsymbols.js",
+        "noErrors.js",
+        "noUndefined.js",
+      ]
+    }
+  });
+</script>
+
+
+
+
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+<!-- <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script> -->
+
+
+      {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+      {%- assign date_format2 = site.minima.date_format | default: "%Y-%-b-%d" -%}
+      <!-- <h3>{{page.url | pop }}</h4> -->
+  {%- assign notesUrl = page.url | replace: 'Code' , "Notes" -%}
+  {%- assign codeUrl = page.url | replace: 'Notes' , "Code" -%}
+  {%- assign pageType = page.url | split: "/" | pop | last -%}
+
+  {%- assign noCode = false -%}
+  {%- if page.noCode -%}
+    {%- assign noCode = page.noCode -%}
+  {%- endif -%}
+
+  <!-- <span>{{noCode}}</span> -->
+
+<article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <div style="display: flex; flex-direction:column;">
+      <h2 style="font-size: 2em; text-decoration: none;">
+
+        {% if pageType == "Code" %}
+          <a href="{{notesUrl}}">
+            <span id="passiveType">Notes</span> 
+          </a>
+        {% endif %}
+        {% if pageType == "Notes" %}
+          <span id="activeType" >Notes</span> 
+        {% endif %}
+
+        {% if noCode == true %}
+            
+              <span  id="noCode" >/ Code</span>
+        {% endif %}
+      
+        {%if noCode == false %}
+          /
+          {% if pageType == "Notes"%}
+            <a href="{{codeUrl}}">
+              <span  id="passiveType" >Code</span>
+            </a>
+          {% endif %}
+          {% if pageType == "Code" %}
+            <span id="activeType" >Code</span> 
+          {% endif %}
+
+        {% endif%}
+
+
+
+      </h2>
+      <h1 class="post-title p-name" itemprop="name headline">{{ page.title | escape }}</h1>
+    </div>
+    <p class="post-meta">
+      <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+        {{ page.date | date: date_format }}
+      </time>
+      {%- if page.modified_date -%}
+        ~ 
+        {%- assign mdate = page.modified_date | date_to_xmlschema -%}
+        <time class="dt-modified" datetime="{{ mdate }}" itemprop="dateModified">
+          {{ mdate | date: date_format }}
+        </time>
+      {%- endif -%}
+      {%- if page.author -%}
+        • {% for author in page.author %}
+          <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <span class="p-author h-card" itemprop="name">{{ author }}</span></span>
+            {%- if forloop.last == false %}, {% endif -%}
+        {% endfor %}
+      {%- endif -%}</p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    {{ content }}
+  </div>
+
+  {%- if site.disqus.shortname -%}
+    {%- include disqus_comments.html -%}
+  {%- endif -%}
+
+  <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
+
+  
+</article>

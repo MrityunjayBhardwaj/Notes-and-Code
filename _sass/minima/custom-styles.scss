@@ -1,0 +1,102 @@
+// Placeholder to allow defining custom styles that override everything else.
+// (Use `_sass/minima/custom-variables.scss` to override variable defaults)
+
+.main-title {
+    text-decoration: underline;
+    text-underline-position: under;
+    text-decoration-thickness: 0.25em;
+    text-underline-offset: -0.268em;
+    // text-decoration-color:rgba(300,000,000,.7);
+    text-decoration-color: rgba(300,000,000,.7);
+    // text-decoration-color: rgba(00,200,300,0.3);
+    // background-color: 
+    // font-weight: bolder;
+    text-decoration-skip-ink: none;
+    margin-bottom: 1em;
+    // color: $link-base-color;
+    // color: white;
+    
+    width: 70%
+
+}
+
+
+
+
+.post-title {
+    text-decoration: underline;
+    text-underline-position: under;
+    text-decoration-thickness: .35em;
+    text-underline-offset: -.48em;
+    text-decoration-color: rgba(000,200,300,.3);
+    text-decoration-skip-ink: none;
+    color: $link-base-color;
+    
+    width: 70%
+}
+
+article h2{
+    text-decoration: underline;
+    text-underline-position: under;
+    text-decoration-thickness: .17em;
+    text-underline-offset: -.3em;
+    text-decoration-color: #333;
+    // background-color: rgba(000,200,300,.3);
+}
+
+article strong{
+    background-color: #2cff0069;
+    // background-color:rgb(255, 160, 122);
+
+    padding: 0 .4em;
+}
+
+article em{
+    background-color: rgba(255, 255, 0, 0.7); 
+    padding: 0 .4em;
+}
+// Custom 
+.title-container{
+  text-align: center;
+  margin-top: 1em;
+  padding: 10px 0 0;
+
+//   text-decoration: underline;
+  text-decoration-thickness: .5em;
+text-underline-offset: 3px;
+  color: rgba(300,000,000,.8);
+}
+
+.title-container #back{
+    float: left;
+}
+
+.site-title {
+    font-weight: 1000;
+}
+
+.site-title span{
+    padding: .04em;
+    // color: rgba(300,000,000,.8);
+    font-size: 1.2em;
+}
+
+.post-header #activeType{
+    // text-decoration: underline;
+    text-underline-position: under;
+    text-decoration-thickness: .20em;
+    background-color: rgba(300,000,000,.7);
+    font-weight: 1000;
+    color: $background-color;
+    padding: .1em;
+
+    padding: .1em 1em .1em .21em;
+    overflow: hidden;
+}
+
+#noCode {
+    text-decoration: line-through;
+    text-decoration-thickness: 0.13em;
+    color: rgba(180,180,180, .5);
+
+}
