@@ -1,10 +1,10 @@
 title: Notes & Code
 author:
-  name: Mrityunjay Bhardwaj
+  name: Mrityunjay
   email: mrityunjaybhardwaj99@gmail.com
   website: https://mrityunjay.ml/
 description: > # this means to ignore newlines until "show_excerpts:"
-  Collection of Notes and Code on Books that found intresting..
+  Collection of several Notes and Code implementation based on some of the Books that found intresting..
 
 # Write an awesome description for your new site here. You can edit this
 # line in _config.yml. It will appear in your document head meta (for
@@ -16,11 +16,13 @@ sub_url: "/Notes-and-Code"
 # refer to https://shopify.github.io/liquid/filters/date/ if you want to customize this
 minima:
   date_format: "%b %-d, %Y"
+  skin: classic
 
   # generate social links in footer
   social_links:
-    twitter: https://twitter.com/mrityunjay_99
-    github:  https://github.com/MrityunjayBhardwaj
+    twitter: mrityunjay_99
+    github:  MrityunjayBhardwaj
+    website: mrityunjay.ml/
     # devto: jekyll
     # dribbble: jekyll
     # facebook: jekyll
@@ -57,8 +59,6 @@ minima:
 
 # Build settings
 theme: minima
-minima:
-  skin: classic
 
 plugins:
  - jekyll-feed
