@@ -51,7 +51,7 @@ layout: default
       <h2 style="font-size: 2em; text-decoration: none;">
 
         {% if pageType == "Code" %}
-          <a href="{{notesUrl}}">
+          <a href="{{site.sub_url}}{{notesUrl}}">
             <span id="passiveType">Notes</span> 
           </a>
         {% endif %}
@@ -67,7 +67,7 @@ layout: default
         {%if noCode == false %}
         /
           {% if pageType == "Notes"%}
-            <a href="{{codeUrl}}">
+            <a href="{{site.sub_url}}{{codeUrl}}">
               <span  id="passiveType" >Code</span>
             </a>
           {% endif %}
